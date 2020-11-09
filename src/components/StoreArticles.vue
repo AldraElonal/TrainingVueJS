@@ -2,52 +2,68 @@
   <div>
 
     <transition name="articles">
-        <b-row v-show="$store.state.store.category==1" cols="4" class="justify-content-md-center">
-      <b-card class="m-2"  v-for="item in item1" v-bind:key="item.id">
-        <template #header>
-          {{ item.name }}
-        </template>
-        <b-card-img v-bind:src="item.img"></b-card-img>
-        <b-card-text>
-          <p>{{ item.desc }} </p>
-          <p class="font-weight-bold"> Prix : {{ item.price }} €</p>
-          <button @click="addItemToBasket(item)"> Ajouter Au Panier</button>
-        </b-card-text>
-      </b-card>
-    </b-row>
-    </transition>
+      <b-row v-show="$store.state.store.category==1" cols="4" class="justify-content-md-center">
 
-    <transition name="articles">
-    <b-row v-show="$store.state.store.category==2" cols="4" class="justify-content-md-center">
-      <b-card class="m-2" v-for="item in item2" v-bind:key="item.id">
-        <template #header>
-          {{ item.name }}
-        </template>
-        <b-card-img v-bind:src="item.img"></b-card-img>
-        <b-card-text>
-          <p>{{ item.desc }} </p>
-          <p class="font-weight-bold"> Prix : {{ item.price }} €</p>
-          <button @click="addItemToBasket(item)"> Ajouter Au Panier</button>
-        </b-card-text>
-      </b-card>
-    </b-row>
-    </transition>
+        <b-card class="m-2" v-for="item in item1" v-bind:key="item.id">
 
-    <transition name="articles">
-      <b-row v-show="$store.state.store.category==3" cols="4" class="justify-content-md-center">
-        <b-card class="m-2" v-for="item in item3" v-bind:key="item.id">
           <template #header>
             {{ item.name }}
           </template>
+
           <b-card-img v-bind:src="item.img"></b-card-img>
           <b-card-text>
             <p>{{ item.desc }} </p>
             <p class="font-weight-bold"> Prix : {{ item.price }} €</p>
             <button @click="addItemToBasket(item)"> Ajouter Au Panier</button>
           </b-card-text>
+
         </b-card>
+
       </b-row>
     </transition>
+
+    <transition name="articles">
+      <b-row v-show="$store.state.store.category==2" cols="4" class="justify-content-md-center">
+
+        <b-card class="m-2" v-for="item in item2" v-bind:key="item.id">
+
+          <template #header>
+            {{ item.name }}
+          </template>
+
+          <b-card-img v-bind:src="item.img"></b-card-img>
+          <b-card-text>
+            <p>{{ item.desc }} </p>
+            <p class="font-weight-bold"> Prix : {{ item.price }} €</p>
+            <button @click="addItemToBasket(item)"> Ajouter Au Panier</button>
+
+          </b-card-text>
+        </b-card>
+
+      </b-row>
+    </transition>
+
+    <transition name="articles">
+      <b-row v-show="$store.state.store.category==3" cols="4" class="justify-content-md-center">
+
+        <b-card class="m-2" v-for="item in item3" v-bind:key="item.id">
+
+          <template #header>
+            {{ item.name }}
+          </template>
+
+          <b-card-img v-bind:src="item.img"></b-card-img>
+          <b-card-text>
+            <p>{{ item.desc }} </p>
+            <p class="font-weight-bold"> Prix : {{ item.price }} €</p>
+            <button @click="addItemToBasket(item)"> Ajouter Au Panier</button>
+
+          </b-card-text>
+        </b-card>
+
+      </b-row>
+    </transition>
+
   </div>
 </template>
 
@@ -257,9 +273,9 @@ export default {
       ]
     }
   },
-  methods :{
-    addItemToBasket(item){
-    this.$store.state.basket.content.push(item);
+  methods: {
+    addItemToBasket(item) {
+      this.$store.state.basket.content.push(item);
 
 
     }
@@ -270,23 +286,22 @@ export default {
 
 <style scoped>
 
-.articles-enter
-{
-
+.articles-enter {
   opacity: 0;
   transform: translateX(-45px);
 }
 
-.articles-leave-to
-{
+.articles-leave-to {
   opacity: 0;
   transform: translateX(45px);
 }
+
 .articles-enter-active {
-    transition: all 1s;
+  transition: all 1s;
   transition-delay: 1s;
 }
-.articles-leave-active{
+
+.articles-leave-active {
   transition: all 1s;
 }
 

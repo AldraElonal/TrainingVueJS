@@ -4,7 +4,6 @@
       <b-col sm="3">
         <HomeFilter news="0" projects="0" skills="0"/>
       </b-col>
-      <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
       <b-col sm="8">
         <transition name="home-components">
           <NewsBlog v-if="$store.state.home.news"/>
@@ -23,8 +22,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import NewsBlog from "@/components/NewsBlog";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";

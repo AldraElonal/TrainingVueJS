@@ -1,17 +1,20 @@
 <template>
-<div><h2>Nos Projets</h2>
-  <div v-for="article in articles" v-bind:key="article.id">
-    <b-card class="m-2">
-      <template #header>
-        {{article.title}}
-      </template>
-      <b-card-text>
-        <p> <img class="cardImg" src="https://picsum.photos/150/150" alt="News Image"/> {{article.id}} {{ article.body }} </p>
-      </b-card-text>
-    </b-card>
-  </div>
+  <div>
+    <h2>Nos Projets</h2>
 
-</div>
+    <div v-for="article in articles" v-bind:key="article.id">
+      <b-card class="m-2">
+        <template #header>
+          {{ article.title }}
+        </template>
+        <b-card-text>
+          <p><img class="cardImg" src="https://picsum.photos/150/150" alt="News Image"/> {{ article.id }}
+            {{ article.body }} </p>
+        </b-card-text>
+      </b-card>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -26,7 +29,7 @@ export default {
     this.$http.get('https://jsonplaceholder.typicode.com/posts').then(
         (response) => {
           response.json().then((data) => {
-                this.articles = data.slice(6,8)
+                this.articles = data.slice(6, 8)
               }
           )
         }, (response) => {
@@ -38,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-.cardImg{
+.cardImg {
   float: right;
 }
 </style>
